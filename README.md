@@ -17,4 +17,3 @@ A simple BREAD application with SQLite and server-side pagination using Node.js,
 - SQLite3
 - EJS (Embedded JavaScript templates)
 - Bootstrap 5
-- Datatables.js (optional enhancement)
