@@ -7,9 +7,7 @@
   </head>
   <body>
     <h1>JSON CRUD (Create, Read, Update, Delete)</h1>
-    <a href="/add">
-      <div class="btn-create">Create</div>
-    </a>
+
     <table>
       <thead>
         <tr>
@@ -30,11 +28,11 @@
           <td><%= item.height %></td>
           <td><%= item.weight %></td>
           <td><%= item.birthdate %></td>
-          <td><%= item.isMarried ? "Yes" : "Not Yet"%></td>
+          <td><%= item.married ? "Yes" : "Not Yet"%></td>
           <td>
-            <a href="/edit?id=<%= index %>">Update</a
+            <a href="/edit/<%= item.id %>">Update</a
             ><a
-              href="/delete?id=<%= index %>"
+              href="/delete/<%= item.id %>"
               onclick="return confirm('apakah anda yakin?')"
               >Delete</a
             >
@@ -43,5 +41,8 @@
         <% }); %>
       </tbody>
     </table>
+    <a href="/add">
+      <div class="btn-create">Add</div>
+    </a>
   </body>
 </html>

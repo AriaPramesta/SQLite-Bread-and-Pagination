@@ -1,12 +1,34 @@
 const express = require("express");
-const { readData } = require("./controllers/dataController");
+const bodyParser = require("body-parser");
+const {
+  readData,
+  addData,
+  addForm,
+  deleteData,
+  editData,
+  updateData,
+} = require("./controllers/dataController");
 
 const app = express();
+
+app.use(bodyParser.urlencoded());
+
+app.use(bodyParser.json());
 
 app.set("view engine", "ejs");
 
 app.get("/", readData);
 
+app.get("/add", addForm);
+
+app.post("/add", addData);
+
+app.get("/delete/:id", deleteData);
+
+app.get("/edit/:id", editData);
+
+app.post("/edit/:id", updateData);
+
 app.listen(3000, function () {
-  console.log("web berjalan di port 3000");
+  console.log("web berjalan di localhost:3000");
 });

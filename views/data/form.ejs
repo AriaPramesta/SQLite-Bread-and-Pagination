@@ -11,30 +11,35 @@
         type="text"
         name="name"
         id="name"
-        value="{name}"
+        value="<%= data.name %>"
         placeholder="Insert your name"
       />
       <input
         type="number"
         name="height"
         id="height"
-        value="{height}"
+        value="<%= data.height %>"
         placeholder="Insert your height"
       />
       <input
         type="number"
         name="weight"
         id="weight"
-        value="{weight}"
+        value="<%= data.weight %>"
         step="0.1"
         placeholder="Insert your weight"
       />
-      <input type="date" name="birthdate" id="birthdate" value="{birthdate}" />
-      <select name="isMarried" id="isMarried">
-        <option value="">have you married ?</option>
-        <option value="true">Yes</option>
-        <option value="false">Not Yet</option>
-      </select>
+      <input
+        type="date"
+        name="birthdate"
+        id="birthdate"
+        value="<%= data.birthdate %>"
+      />
+     <select name="married" id="married">
+        <option value="" <%= data.married === null ? 'selected' : '' %>>have you married ?</option>
+        <option value="1" <%= data.married === true ? 'selected' : '' %>>Yes</option>
+        <option value="0" <%= data.married === false ? 'selected' : '' %>>Not Yet</option>
+     </select>
       <button type="submit">Save</button>
       <a href="/" class="btn-cancel">Cancel</a>
     </form>
