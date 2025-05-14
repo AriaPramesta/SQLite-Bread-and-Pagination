@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQLite BREAD & Pagination</title>
+  </head>
+  <body>
+    <h1>JSON CRUD (Create, Read, Update, Delete)</h1>
+    <a href="/add">
+      <div class="btn-create">Create</div>
+    </a>
+    <table>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Name</th>
+          <th>Height</th>
+          <th>Weight</th>
+          <th>Birth Date</th>
+          <th>Is Married</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach((item, index) => { %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= item.name %></td>
+          <td><%= item.height %></td>
+          <td><%= item.weight %></td>
+          <td><%= item.birthdate %></td>
+          <td><%= item.isMarried ? "Yes" : "Not Yet"%></td>
+          <td>
+            <a href="/edit?id=<%= index %>">Update</a
+            ><a
+              href="/delete?id=<%= index %>"
+              onclick="return confirm('apakah anda yakin?')"
+              >Delete</a
+            >
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
+</html>

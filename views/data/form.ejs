@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adding data</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <input
+        type="text"
+        name="name"
+        id="name"
+        value="{name}"
+        placeholder="Insert your name"
+      />
+      <input
+        type="number"
+        name="height"
+        id="height"
+        value="{height}"
+        placeholder="Insert your height"
+      />
+      <input
+        type="number"
+        name="weight"
+        id="weight"
+        value="{weight}"
+        step="0.1"
+        placeholder="Insert your weight"
+      />
+      <input type="date" name="birthdate" id="birthdate" value="{birthdate}" />
+      <select name="isMarried" id="isMarried">
+        <option value="">have you married ?</option>
+        <option value="true">Yes</option>
+        <option value="false">Not Yet</option>
+      </select>
+      <button type="submit">Save</button>
+      <a href="/" class="btn-cancel">Cancel</a>
+    </form>
+  </body>
+</html>
