@@ -1,47 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adding data</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQLite BREAD & Pagination</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <style>
+    .btn-fixed-width {
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
     <form action="" method="post">
-      <input
-        type="text"
-        name="name"
-        id="name"
-        value="<%= data.name %>"
-        placeholder="Insert your name"
-      />
-      <input
-        type="number"
-        name="height"
-        id="height"
-        value="<%= data.height %>"
-        placeholder="Insert your height"
-      />
-      <input
-        type="number"
-        name="weight"
-        id="weight"
-        value="<%= data.weight %>"
-        step="0.1"
-        placeholder="Insert your weight"
-      />
-      <input
-        type="date"
-        name="birthdate"
-        id="birthdate"
-        value="<%= data.birthdate %>"
-      />
-     <select name="married" id="married">
-        <option value="" <%= data.married === null ? 'selected' : '' %>>have you married ?</option>
-        <option value="1" <%= data.married === true ? 'selected' : '' %>>Yes</option>
-        <option value="0" <%= data.married === false ? 'selected' : '' %>>Not Yet</option>
-     </select>
-      <button type="submit">Save</button>
-      <a href="/" class="btn-cancel">Cancel</a>
+      <div class="card">
+        <div class="card-header">
+          <h1 class="text-center">Updating Data</h1>
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="name" class="form-control" id="name" name="name" value="<%= data.name %>">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="height" class="col-sm-2 col-form-label">Height</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="height" name="height" value="<%= data.height %>">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="weight" class="col-sm-2 col-form-label">Weight</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="weight" name="weight" step="0.1" value="<%= data.weight %>">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="birthdate" class="col-sm-2 col-form-label">Birth Date</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="birthdate" name="birthdate" value="<%= data.birthdate %>">
+            </div>
+          </div>
+          <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Is Married</legend>
+            <div class="col-sm-10">
+              <div class="form-check ">
+                <input class="form-check-input" type="radio" name="married" id="0" value="0" checked>
+                <label class="form-check-label" for="0">
+                  Not Yet
+                </label>
+              </div>
+              <div class="form-check ">
+                <input class="form-check-input" type="radio" name="married" id="1" value="1">
+                <label class="form-check-label" for="1">
+                  Yes
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-success text-white btn-fixed-width">Save</button>
+          <a href="/" class="btn btn-warning text-dark btn-fixed-width">Back</a>
+        </div>
+      </div>
     </form>
-  </body>
+  </div>
+
+</body>
+
 </html>
