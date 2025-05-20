@@ -1,9 +1,9 @@
 const Data = require("../models/Data");
 
 function readData(req, res) {
-  Data.read(req.query, function (data, page, pages) {
+  Data.read(req.query, function (data, page, pages, offset) {
     const url = req.url == "/" ? "/?page=1" : req.url;
-    res.render("data/list", { data, query: req.query, page, pages, url });
+    res.render("data/list", { data, query: req.query, page, pages, offset, url });
   });
 }
 

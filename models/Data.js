@@ -51,7 +51,7 @@ function read(query, callback) {
       if (err) {
         console.log(err);
       } else {
-        callback(data, page, pages);
+        callback(data, page, pages, offset);
       }
     });
   });
