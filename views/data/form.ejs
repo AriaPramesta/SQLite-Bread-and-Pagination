@@ -51,13 +51,15 @@
             <legend class="col-form-label col-sm-2 pt-0">Is Married</legend>
             <div class="col-sm-10">
               <div class="form-check ">
-                <input class="form-check-input" type="radio" name="married" id="0" value="0" checked>
+                <input class="form-check-input" type="radio" name="married" id="0" value="0" <%=data.married=='0'
+                  ? 'checked' : '' %>>
                 <label class="form-check-label" for="0">
                   Not Yet
                 </label>
               </div>
               <div class="form-check ">
-                <input class="form-check-input" type="radio" name="married" id="1" value="1">
+                <input class="form-check-input" type="radio" name="married" id="1" value="1" <%=data.married=='1'
+                  ? 'checked' : '' %>>
                 <label class="form-check-label" for="1">
                   Yes
                 </label>

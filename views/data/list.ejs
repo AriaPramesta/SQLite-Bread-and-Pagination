@@ -56,14 +56,15 @@
           <div class="row mb-3">
             <label for="height" class="col-sm-2 col-form-label">Height</label>
             <div class="col-sm-10">
-              <input type="number" class="form-control" id="height" name="height" placeholder="Insert your height">
+              <input type="number" class="form-control" id="height" name="height" placeholder="Insert your height"
+                value="<%= query.height %>">
             </div>
           </div>
 
           <div class="row mb-3">
             <label for="weight" class="col-sm-2 col-form-label">Weight</label>
             <div class="col-sm-10">
-              <input type="number" step="0.1" class="form-control" id="weight" name="weight"
+              <input type="number" step="0.1" class="form-control" id="weight" name="weight" value="<%= query.weight %>"
                 placeholder="Insert your weight">
             </div>
           </div>
@@ -72,13 +73,15 @@
             <label for="birthdate" class="col-sm-2 col-form-label">Birth Date</label>
             <div class="col-sm-10 d-flex justify-content-between">
               <div class="col-sm-5">
-                <input type="date" step="0.1" class="form-control" id="birthdate" name="startdate">
+                <input type="date" step="0.1" class="form-control" id="birthdate" name="startdate"
+                  value="<%= query.startdate %>">
               </div>
               <div>
                 s.d
               </div>
               <div class="col-sm-5">
-                <input type="date" step="0.1" class="form-control" id="birthdate" name="enddate">
+                <input type="date" step="0.1" class="form-control" id="birthdate" name="enddate"
+                  value="<%= query.enddate %>">
               </div>
             </div>
           </div>
@@ -104,7 +107,8 @@
                 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="operation" id="and" value="and">
+                <input class="form-check-input" type="radio" name="operation" id="and" value="and"
+                  <%=query.operation=='and' ? 'checked' : '' %>>
                 <label class="form-check-label" for="and">
                   AND
                 </label>
